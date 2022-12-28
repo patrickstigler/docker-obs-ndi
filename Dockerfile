@@ -26,7 +26,7 @@ RUN echo headless | sudo -S -k apt-get update \
 	&& echo headless | sudo -S -k apt-get update \
 	&& echo headless | sudo -S -k apt-get clean -y \
 # Copy various files to their respective places
-	&& echo headless | sudo -S -k wget -q -O /tmp/libndi4_4.5.1-1_amd64.deb https://github.com/Palakis/obs-ndi/releases/download/4.9.1/libndi4_4.5.1-1_amd64.deb \
+	&& echo headless | sudo -S -k wget -q -O /tmp/libndi4_4.5.1-1_amd64.deb https://github.com/Palakis/obs-ndi/releases/download/dummy-tag-4.10.0/libndi4_4.5.1-1_amd64.deb \
 	&& echo headless | sudo -S -k wget -q -O /tmp/obs-ndi-4.10.0-Ubuntu64.deb https://github.com/Palakis/obs-ndi/releases/download/dummy-tag-4.10.0/obs-ndi-4.10.0-Ubuntu64.deb \
 
 # Download and install the plugins for NDI
