@@ -15,7 +15,8 @@ ENV VNC_PASSWD=headless
 ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
 
 # Make sure the dependencies are met
-RUN echo headless | sudo -S -k apt-get update \
+RUN export DEBIAN_FRONTEND=noninteractive \
+	&& echo headless | sudo -S -k apt-get update \
 	&& echo headless | sudo -S -k apt install -y --fix-broken avahi-daemon xterm git build-essential cmake curl ffmpeg git libboost-dev libnss3 mesa-utils qtbase5-dev strace x11-xserver-utils net-tools python3 python3-numpy scrot wget software-properties-common vlc jq udev unrar qt5-image-formats-plugins nvidia-driver-515 \
 	&& echo headless | sudo -S -k sed -i 's/geteuid/getppid/' /usr/bin/vlc \
 	&& echo headless | sudo -S -k add-apt-repository ppa:obsproject/obs-studio \
